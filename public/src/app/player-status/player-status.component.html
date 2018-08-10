@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let player of players'>
+      <td>{{player.name}}</td>
+      <td *ngIf='game_num == 1'>
+        <button (click)="changeStatus('playing', player._id)" [ngClass]="{'green':player.game_one === 'playing'}">Playing</button> 
+        <button (click)="changeStatus('not playing', player._id)" [ngClass]="{'red':player.game_one === 'not playing'}">Not Playing</button> 
+        <button (click)="changeStatus('undecided', player._id)" [ngClass]="{'yellow':player.game_one === 'undecided'}">Undecided</button>
+      </td>
+      <td *ngIf='game_num == 2'>
+          <button (click)="changeStatus('playing', player._id)" [ngClass]="{'green':player.game_two === 'playing'}">Playing</button> 
+          <button (click)="changeStatus('not playing', player._id)" [ngClass]="{'red':player.game_two === 'not playing'}">Not Playing</button> 
+          <button (click)="changeStatus('undecided', player._id)" [ngClass]="{'yellow':player.game_two === 'undecided'}">Undecided</button>
+      </td>
+      <td *ngIf='game_num == 3'>
+          <button (click)="changeStatus('playing', player._id)" [ngClass]="{'green':player.game_three === 'playing'}">Playing</button> 
+          <button (click)="changeStatus('not playing', player._id)" [ngClass]="{'red':player.game_three === 'not playing'}">Not Playing</button> 
+          <button (click)="changeStatus('undecided', player._id)" [ngClass]="{'yellow':player.game_three === 'undecided'}">Undecided</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

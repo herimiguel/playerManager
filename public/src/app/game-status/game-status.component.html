@@ -1,0 +1,11 @@
+<div>
+  <h1>Player Status</h1>
+  <ul>
+      <li><a [routerLink] = "['../1']">Game 1</a></li>
+      <li> | </li>
+      <li><a [routerLink] = "['../2']">Game 2</a></li>
+      <li> | </li>
+      <li><a [routerLink] = "['../3']">Game 3</a></li>
+  </ul>
+  <app-player-status [players]='players' [game_num]='game_num' (changeStatusEmitter)=changeStatus($event)></app-player-status>
+</div>
